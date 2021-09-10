@@ -28,5 +28,14 @@ asciidoctor {
         include 'toplevel.adoc'
     }
     outputDir  file('build/docs')
+    attributes "myContent" : "myValue"
 }
 
+tasks myContent1(type:  AsciidoctorTask) {
+    sourceDir  file('docs')
+    sources {
+        include 'toplevel.adoc'
+    }
+    outputDir  file('build/docs')
+    attributes "myContent" : "myContent1"
+}
