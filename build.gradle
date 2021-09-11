@@ -31,11 +31,19 @@ asciidoctor {
     attributes "myContent" : "myValue"
 }
 
-tasks myContent1(type:  AsciidoctorTask) {
+
+tasks.withType(org.asciidoctor.gradle.jvm.AsciidoctorTask) { docTask ->
     sourceDir  file('docs')
     sources {
         include 'toplevel.adoc'
     }
     outputDir  file('build/docs')
+}
+
+tasks.register("myContent1", org.asciidoctor.gradle.jvm.AsciidoctorTask) {
     attributes "myContent" : "myContent1"
+}
+
+tasks.register("myContent2", org.asciidoctor.gradle.jvm.AsciidoctorTask) {
+    attributes "myContent" : "myContent2"
 }
