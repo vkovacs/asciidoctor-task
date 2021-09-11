@@ -20,18 +20,6 @@ test {
     useJUnitPlatform()
 }
 
-
-
-asciidoctor {
-    sourceDir  file('docs')
-    sources {
-        include 'toplevel.adoc'
-    }
-    outputDir  file('build/docs')
-    attributes "myContent" : "myValue"
-}
-
-
 tasks.withType(org.asciidoctor.gradle.jvm.AsciidoctorTask) { docTask ->
     sourceDir  file('docs')
     sources {
